@@ -29,7 +29,7 @@ app.use(fileUpload({
 }));
 app.use(
 	cors({
-		origin:"https://studynotion-backend-lulv.onrender.com/api/v1",
+		origin:"https://study-notion-ten.vercel.appapi/v1",
 		credentials:true,
 	})
 )
