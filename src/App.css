@@ -1,0 +1,70 @@
+
+.CustomBg {
+    background-image: url("./assets/Images/bghome.svg");
+}
+.navbarLinks > .active{
+    color: #FFD60A;
+}
+
+.sideBar > .active{
+  color: #FFD60A;
+  background-color: #3D2A01;
+  border-left: 3px solid #FFD60A;
+}
+
+.imgUpload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.codeBlockStyle{
+  background: linear-gradient(141deg, rgba(14, 26, 45, 0.24) 0%, rgba(17, 30, 50, 0.38) 100%);
+  backdrop-filter: blur(26px);
+}
+
+.codeBlockBg1{
+  background: var(--gradient-02, linear-gradient(144deg, #8A2BE2 0%, #FFA500 50%, #F8F8FF 100%));
+  filter: blur(34px); 
+}
+
+.codeBlockBg2{
+  background: var(--gradient-05, linear-gradient(138deg, #1FA2FF 0%, #12D8FA 50%, #A6FFCB 100%));
+  filter: blur(34px);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
