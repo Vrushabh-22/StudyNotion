@@ -29,7 +29,7 @@ app.use(fileUpload({
 }));
 app.use(
 	cors({
-		origin:"http://localhost:3000",
+		origin:"https://studynotion-backend-lulv.onrender.com/api/v1",
 		credentials:true,
 	})
 )
@@ -48,7 +48,7 @@ cloudinaryConnect();
 app.get("/" , (req, res) => {
     res.json({
         success:true,
-        message:"Working"
+        message:"Server is up and running"
     });
 })
 
