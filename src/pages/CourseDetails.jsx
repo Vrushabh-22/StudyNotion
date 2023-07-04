@@ -83,7 +83,7 @@ const CourseDetails = () => {
 
     const handleCart = () => {
       if(user && user.role === ACCOUNT_TYPE.INSTRUCTOR){
-        toast.error("You are instructor");
+        toast.error("You are an instructor");
         return;
       }
       if(token) {
