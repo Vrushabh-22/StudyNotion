@@ -25,7 +25,7 @@ export function accountDelete (token, navigate) {
 
 export  function changeProfileImg (profileImage, token) {
     return async (dispatch) => {
-        toast.success("Chnaging Profile Image")
+        const toastId = toast.loading("Updating Profile Image")
         try {
             const response = await apiConnector("PUT", CHANGEPROFILEIMAGE_API, profileImage, {
                 'Content-Type': "multipart/form-data",
@@ -38,12 +38,13 @@ export  function changeProfileImg (profileImage, token) {
             console.log(error.message);
             toast.error("failed to Change profile image")
         }
+        toast.dismiss(toastId)
     }
 }
 
 export function updateProfile (data, token) {
     return async (dispatch) => {
-        toast.success("Updating Details")
+        const toastId = toast.success("Updating Details")
         try {
             const response = await apiConnector("PUT", UPDATEPROFILE_API, data, {Authorization : `Bearer ${token}`});
             dispatch(setProfileDetails(response.data.profile))
@@ -53,6 +54,7 @@ export function updateProfile (data, token) {
             console.log(error.message);
             toast.error("Update Profile Failed");
         }
+        toast.dismiss(toastId)
     }
 } 
 
