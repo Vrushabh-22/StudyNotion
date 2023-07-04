@@ -35,7 +35,7 @@ exports.resetToken = async (req, res) => {
         const updateUser = await User.findOneAndUpdate({email}, {token,tokenExpires:Date.now()+3600000}, {new:true})
 
         //creating a reset front-end link 
-        const url = `http://localhost:3000/reset-password/${token}`
+        const url = `https://study-notion-ten.vercel.app/reset-password/${token}`
 
         //sending a mail
         const mail = await Mailer(email, linkTemplate(url),"Password Reset Link || By StudyNotion");
