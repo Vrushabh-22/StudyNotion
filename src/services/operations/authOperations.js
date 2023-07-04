@@ -33,7 +33,6 @@ export function sendotp (email, navigate) {
 
 export function sendresetpasstoken (email, setEmailSent) {
     return async (dispatch) => {
-        const toastId = toast.loading("Loading")
         dispatch(setLoading(true))
         try {
             await apiConnector("POST", RESETTOKEN_API, {email});
@@ -44,7 +43,6 @@ export function sendresetpasstoken (email, setEmailSent) {
             toast.error("Failed to send reset link")
         }
         dispatch(setLoading(false))
-        toast.dismiss(toastId)
     } 
 }   
 
