@@ -121,9 +121,9 @@ const CourseDetails = () => {
                           <p className='text-richblack-25'>({courseData?.ratingAndReviews.length} Ratings)</p>
                           <p className='text-richblack-25'>{courseData?.studentsEnrolled?.length} Student(s) Enrolled</p>
                         </div>
-                        <p className='text-richblack-25'>Craeted By {`${courseData?.instructor?.firstName} ${courseData?.instructor?.lastName}`}</p>
+                        <p className='text-richblack-25'>Created By {`${courseData?.instructor?.firstName} ${courseData?.instructor?.lastName}`}</p>
                         <div className='flex flex-row items-center gap-x-6 text-richblack-25'>
-                          <p className='flex flex-row items-center gap-x-2'><AiOutlineInfoCircle/> Craeted At : {formatDate(courseData?.createdAt)}</p>
+                          <p className='flex flex-row items-center gap-x-2'><AiOutlineInfoCircle/> Created At : {formatDate(courseData?.createdAt)}</p>
                           <p className='flex flex-row items-center gap-x-2'><BsGlobe className='text-[0.875rem]'/> English</p>
                         </div>
                       </div>
