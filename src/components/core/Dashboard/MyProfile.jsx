@@ -66,7 +66,7 @@ const MyProfile = () => {
 
                             <div>
                                 <p className="text-[0.875rem] text-richblack-5 pb-1">Phone Number</p>
-                                <p className='text-[0.875rem] text-richblack-600'>{user?.profile?.phoneNumber ? `${user?.profile?.phoneNumber}` : "Add Phone Number"}</p>
+                                <p className='text-[0.875rem] text-richblack-600'>{user?.profile?.phoneNo ? `${user?.profile?.phoneNo}` : "Add Phone Number"}</p>
                             </div>
 
                             <div>
