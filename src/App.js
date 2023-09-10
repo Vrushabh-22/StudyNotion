@@ -61,50 +61,52 @@ const App = () => {
   return (
     <div className='w-full min-h-screen font-inter overflow-x-hidden bg-richblack-900'>
       <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/catelog/:catelogName' element={<Catelog/>}/>
-        <Route path='/courses/:courseId' element={<CourseDetails/>}/>
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/forgot-password' element={<ForgotPassword />} />
-        <Route path='/reset-password/:token' element={<ResetPassword />} />
-        <Route path='/verify-email' element={<VerifyEmail />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<ContactUs />} />
-        <Route path='*' element={<Error/>}/>
-        {/* this is how you create nested and protected routes */}
-        <Route element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>} >
-          <Route path='/dashboard/my-profile' element={<MyProfile />}/>
-          <Route path='/dashboard/settings' element={<Settings />}/>
-          {
-            user?.role === ACCOUNT_TYPE.STUDENT && 
-            <>
-              <Route path='/dashboard/enrolled-courses' element={<EnrolledCourses/>}/>
-              <Route path='/dashboard/cart' element={<Wishlist/>}/>
-            </>
-          }
-          {
-            user?.role === ACCOUNT_TYPE.INSTRUCTOR && 
-            <>
-              <Route path='/dashboard/add-course' element={<AddCourse/>}/>
-              <Route path='/dashboard/my-courses' element={<MyCourses/>}/>
-              <Route path='/dashboard/edit-course/:courseId' element={<EditCourse/>}/>
-              <Route path='/dashboard/insights' element={<Insights/>}/>
-            </>
-          }
-        </Route>
-
-        <Route element={<ProtectedRoutes><ViewCourse/></ProtectedRoutes>} >
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/catelog/:catelogName' element={<Catelog/>}/>
+          <Route path='/courses/:courseId' element={<CourseDetails/>}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route path='/reset-password/:token' element={<ResetPassword />} />
+          <Route path='/verify-email' element={<VerifyEmail />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<ContactUs />} />
+          <Route path='*' element={<Error/>}/>
+          {/* this is how you create nested and protected routes */}
+          <Route element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>} >
+            <Route path='/dashboard/my-profile' element={<MyProfile />}/>
+            <Route path='/dashboard/settings' element={<Settings />}/>
             {
               user?.role === ACCOUNT_TYPE.STUDENT && 
               <>
-                <Route path='view-course/:courseId/section/:sectionId/subSection/:subSectionId' element={<VideoPlayer />}/>
+                <Route path='/dashboard/enrolled-courses' element={<EnrolledCourses/>}/>
+                <Route path='/dashboard/cart' element={<Wishlist/>}/>
               </>
             }
-        </Route>
+            {
+              user?.role === ACCOUNT_TYPE.INSTRUCTOR && 
+              <>
+                <Route path='/dashboard/add-course' element={<AddCourse/>}/>
+                <Route path='/dashboard/my-courses' element={<MyCourses/>}/>
+                <Route path='/dashboard/edit-course/:courseId' element={<EditCourse/>}/>
+                <Route path='/dashboard/insights' element={<Insights/>}/>
+              </>
+            }
+          </Route>
 
-      </Routes>
+          <Route element={<ProtectedRoutes><ViewCourse/></ProtectedRoutes>} >
+              {
+                user?.role === ACCOUNT_TYPE.STUDENT && 
+                <>
+                  <Route path='view-course/:courseId/section/:sectionId/subSection/:subSectionId' element={<VideoPlayer />}/>
+                </>
+              }
+          </Route>
+
+        </Routes>
+      </Suspense>
       
     </div>
   )
