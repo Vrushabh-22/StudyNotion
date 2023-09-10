@@ -61,7 +61,7 @@ const App = () => {
   return (
     <div className='w-full min-h-screen font-inter overflow-x-hidden bg-richblack-900'>
       <Navbar/>
-      <Suspense fallback={<div calssName="h-[calc(100vh-4.125rem)] grid place-items-center"><Loader/>}>
+      <Suspense fallback={<div calssName="h-[calc(100vh-4.125rem)] grid place-items-center"><Loader/></div>}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/catelog/:catelogName' element={<Catelog/>}/>
