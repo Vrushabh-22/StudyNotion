@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {FaArrowRight} from "react-icons/fa"
 import CustomBtn from '../components/core/HomePage/CustomBtn'
-import Banner from "../assets/Images/banner.mp4"
+import Banner2 from "../assets/Images/vadim-bozhko-lbO1iCnbTW0-unsplash.jpg"
+//import Banner from "../assets/Images/banner.mp4"
 import { TypeAnimation } from 'react-type-animation'
 import TimelineSection from '../components/core/HomePage/TimelineSection'
 import know_your_progress from "../assets/Images/Know_your_progress.png"
@@ -52,9 +53,10 @@ const Home = () => {
 
                 
                     <div className=' w-[80%] lg:w-[70%] rounded-3xl shadow-[-0px_-0px_30px] shadow-blue-200'>
-                        <video className='shadow-[15px_15px_0px_rgb(255,255,255)]' muted autoPlay loop>
+                       <img src={Banner2} className='shadow-[15px_15px_0px_rgb(255,255,255)]' />
+                        {/* <video className='shadow-[15px_15px_0px_rgb(255,255,255)]' muted autoPlay loop>
                             <source src={Banner}></source>
-                        </video>
+                        </video> */}
                     </div>
                 
                 
