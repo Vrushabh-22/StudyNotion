@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {FaArrowRight} from "react-icons/fa"
 import CustomBtn from '../components/core/HomePage/CustomBtn'
-import Banner2 from "../assets/Images/Banner3.avif"
+import Banner2 from "../assets/Images/vadim-bozhko-lbO1iCnbTW0-unsplash.jpg"
 //import Banner from "../assets/Images/banner.mp4"
 import { TypeAnimation } from 'react-type-animation'
 import TimelineSection from '../components/core/HomePage/TimelineSection'
